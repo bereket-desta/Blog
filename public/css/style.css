@@ -152,6 +152,27 @@ body {
     margin: 2rem auto;
 }
 
+
+.post-container{
+    width:80%;
+    height: 100%;
+    margin:2rem auto;
+    padding:2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.post-container h1{
+    text-align: center;
+    font-size: 3em;
+}
+
+.post-container article{
+    color:#888;
+    word-spacing:0.3em;
+}
+
 /* Articles Section Styles */
 .articles {
     max-width: 70%;
@@ -263,6 +284,20 @@ body {
         width:80%;
     }
 
+    .main{
+        padding: 2rem 0;
+    }
+
+    .post-container{
+        width:auto;
+        margin:0;
+    }
+
+    .contact-container{
+        width:90%;
+        margin:0;
+        padding:0.3rem;
+    }
     
 }
 
@@ -492,5 +527,49 @@ body {
     resize: vertical; /* Allows vertical resizing */
 }
 
+
+/* contact section */
+
+    
+.contact-container {
+    width: 60%;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.contact-container label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-container button:hover {
+    background-color: #0056b3;
+}
 
 
