@@ -92,6 +92,10 @@ router.get('/post/:id', async (req, res) => {
             description: "simple Blog website with Node.js, Express & MongoDB"
         };
         res.render('post', { locals, data });
+
+       // const renderdBody = marked(post.body);
+       // res.render('post', {data : {locals, title: data.title, body:renderdBody});
+        
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal Server Error');
