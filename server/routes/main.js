@@ -1,7 +1,7 @@
 
 const express = require('express');
 const router = express.Router();
-
+const {marked} = require('marked');
 const posts= require('../models/post');
 //const post = require('../models/post');
 //const { MongoClient } = require('mongodb');
@@ -78,9 +78,11 @@ router.get('/', async(req, res) => {
 * Post: id
 */
 router.get('/post/:id', async (req, res) => {
-    try {
-        
 
+    console.log('route accessed with ID:', req.params.id);
+    
+    try {
+    
         let slug = req.params.id.trim();
         const data = await posts.findById(slug);
 
@@ -91,10 +93,14 @@ router.get('/post/:id', async (req, res) => {
             title: data.title,
             description: "simple Blog website with Node.js, Express & MongoDB"
         };
-        res.render('post', { locals, data });
-
-       // const renderdBody = marked(post.body);
-       // res.render('post', {data : {locals, title: data.title, body:renderdBody});
+        
+        const renderBody = marked(data.body);
+        
+        res.render('post', { locals, data:{
+            title: data.title,
+            body: renderBody
+        } 
+        });
         
     } catch (error) {
         console.error(error);
